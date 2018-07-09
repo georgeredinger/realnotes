@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site Notes</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="material.css">
+  <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+  <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+  <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+  <script defer src="/__/firebase/5.2.0/firebase-messaging.js"></script>
+  <script defer src="/__/firebase/5.2.0/firebase-storage.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
+  <script defer src="app.js"></script>
+  <script defer src="material.js"></script>
+  <script defer src="/__/firebase/init.js"></script>
+</head>
+
+<body>
+  <div class="mdl-layout">
+    <div class="mdl-layout-title"> Site Notes </div>
+    <section id="thing">
+      <legend> Site number</legend>
+      <input type="text" maxlength="20" id="siteId" name="site" placeholder="Gotta have a site number" >
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id='load'> load </button>
+      <legend>Notes</legend>
+      <textarea placeholder="Site notes go here" rows="6" cols="33" maxlength="200" id="notes" name="notes" ></textarea>
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id='save'> save </button>
+    </section>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,22 @@
+
+
+#siteId {
+    margin:10px;
+}
+#notes {
+    margin:10px;
+}
+
+#thing {
+    margin:10px;
+}
+.mdl-layout-title{
+    margin:10px;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 2px 2px 2px grey;
+}
+.mdl-layout{
+    align-items: center;
+    justify-content: center;
+}
