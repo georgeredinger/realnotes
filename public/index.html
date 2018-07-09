@@ -8,6 +8,7 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="material.css">
+  <link type="text/css" rel="stylesheet" href="bower_components/firebaseui/dist/firebaseui.css" />
   <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
   <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
   <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
@@ -17,20 +18,26 @@
   <script defer src="app.js"></script>
   <script defer src="material.js"></script>
   <script defer src="/__/firebase/init.js"></script>
+  <script   src="bower_components/firebaseui/dist/firebaseui.js"></script>
+
 </head>
 
 <body>
+   <div id = 'firebaseui-auth-container'></div>
   <div class="mdl-layout">
     <div class="mdl-layout-title"> Site Notes </div>
     <section id="thing">
       <legend> Site number</legend>
-      <input type="text" maxlength="20" id="siteId" name="site" placeholder="Gotta have a site number" >
+      <input type="text" maxlength="20" id="siteId" name="site" placeholder="Gotta have a site number">
       <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id='load'> load </button>
       <legend>Notes</legend>
-      <textarea placeholder="Site notes go here" rows="6" cols="33" maxlength="200" id="notes" name="notes" ></textarea>
+      <textarea placeholder="Site notes go here" rows="6" cols="33" maxlength="200" id="notes" name="notes"></textarea>
       <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id='save'> save </button>
     </section>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" id='logout'> Logout </button>
+
   </div>
-  
+
 </body>
+
 </html>

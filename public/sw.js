@@ -1,6 +1,3 @@
-"use strict ";
-console.log("wat! I am a service worker");
-
 var cacheName = 'shell-content';
 var filesToCache = [
   'styles.css',
