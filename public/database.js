@@ -1,18 +1,20 @@
 // database.js
 
-
+var db;
+var notesRef;
 firebase.initializeApp({
     apiKey: 'AIzaSyDjRk2i7KKUNle65LnUYcTUqeRzb9I4aWM',
     authDomain: '### FIREBASE AUTH DOMAIN ###',
     projectId: 'realnotes-3f4f4'
   });
-
-  var db = firebase.firestore();
-  var notesRef = db.collection("site");
+ 
 
   firebase.firestore().enablePersistence()
     .then(function () {
       // Initialize Cloud Firestore through firebase
+      db = firebase.firestore();
+      notesRef = db.collection("site");
+
     })
     .catch(function (err) {
       if (err.code == 'failed-precondition') {

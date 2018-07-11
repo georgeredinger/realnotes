@@ -5,8 +5,8 @@ logoutId.onclick = logout;
 
 
 firebase.auth().onAuthStateChanged(function (user) {
+    theUser = user;
     if (user) {
-      theUser = user;
       // User is signed in.
       var displayName = user.displayName;
       var email = user.email;
@@ -17,28 +17,30 @@ firebase.auth().onAuthStateChanged(function (user) {
       var providerData = user.providerData;
       // ...
     } else {
-      // User is signed out.
-      // ...
-      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      login();
+    };
+});
 
-      if (!theUser) {
-        ui.start('#firebaseui-auth-container', {
-          signInSuccessUrl: 'index.html',
-          signInOptions: [{
-            provider: firebase.auth.EmailAuthProvider.EMAIL_PASSWORD_SIGN_IN_METHOD,
-            requireDisplayName: false
-          }]
-        });
-
-      }
-    }
+function logout() {
+  firebase.auth().signOut().then(function () {
+    // Sign-out successful.
+    location.reload();
+  }).catch(function (error) {
+    // An error happened.
   });
+}
 
-  function logout() {
-    firebase.auth().signOut().then(function () {
-      // Sign-out successful.
-      location.reload();
-    }).catch(function (error) {
-      // An error happened.
+function login() {
+  var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+  if (!theUser) {
+    ui.start('#firebaseui-auth-container', {
+      signInSuccessUrl: 'index.html',
+      signInOptions: [{
+        provider: firebase.auth.EmailAuthProvider.EMAIL_PASSWORD_SIGN_IN_METHOD,
+        requireDisplayName: false
+      }]
     });
+
   }
+}

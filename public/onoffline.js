@@ -1,17 +1,24 @@
 // onoffline.js
-
+var online;
+function isOnline(){
+    return online;
+}
 if (navigator.onLine) {
     document.body.style.backgroundColor = "LightGreen";
+    online = true;
 } else {
     document.body.style.backgroundColor = "LightPink";
+    online = false;
 }
 
 window.addEventListener('online', function (e) {
-    // Re-sync data with server.
+    online = true;
     document.body.style.backgroundColor = "LightGreen";
+    login();
 }, false);
 
 window.addEventListener('offline', function (e) {
-    // Queue up events for server.
+    online = false;
     document.body.style.backgroundColor = "LightPink";
+   // logout();
 }, false);
