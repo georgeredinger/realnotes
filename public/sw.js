@@ -11,7 +11,6 @@ self.addEventListener('install', function(e) {
  
 });
 
-
 this.addEventListener('install', function (event) {
     console.log("whoo who, install event in service worker");
     event.waitUntil(
