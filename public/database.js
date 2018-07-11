@@ -2,6 +2,7 @@
 
 var db;
 var notesRef;
+
 firebase.initializeApp({
     apiKey: 'AIzaSyDjRk2i7KKUNle65LnUYcTUqeRzb9I4aWM',
     authDomain: '### FIREBASE AUTH DOMAIN ###',
