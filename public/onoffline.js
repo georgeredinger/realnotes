@@ -22,3 +22,5 @@ window.addEventListener('offline', function (e) {
     document.body.style.backgroundColor = "LightPink";
    // logout();
 }, false);
+
+

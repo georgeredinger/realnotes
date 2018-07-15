@@ -12,15 +12,23 @@
     let notes = textId.value;
     let date = new Date();
     var timeStamp = date.toISOString();
+
+
+    // if offline and unauthenticated
+    if(theUser == null){
+      theUser = {}; 
+      theUser.email = 'offline.email.com';
+    }
     let saveme = {
       siteId: siteNumber,
       notes: `${timeStamp}
     [${location.lat},${location.lng}]
-    ${theUser.email}
+     ${theUser.email}
      ${notes}`
     };
     notesRef.doc(siteNumber).set(saveme);
     textId.value = saveme.notes;
+    offlinePut(siteNumber, saveme);
    // function storeSite(siteId, data)
   }
 
@@ -30,6 +38,10 @@
     let textId = document.getElementById("notes");
 
     loadSite(siteNumber).then(function (doc) {
+// if offline and unauthenticated
+
+
+
       if (doc.exists) {
         console.log("Document data:", doc.data());
         let d = doc.data();
